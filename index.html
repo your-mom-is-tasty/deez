@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html>
+    <script>
+        downloaded = 0;
+    </script>
+    <head>
+        <!-- <style>
+            body {
+                background-image: url("free-vbucks\\assets\\background.png");
+            }
+        </style> -->
+        Download 2 apps to verify that you are human!
+        <br>
+        Apps downloaded: 
+        <span id="displayedDownloads">
+            <script>
+                document.write(downloaded)
+            </script>
+        </span>
+    </head>
+    <body>
+        <br>
+        <hr>
+        <p>Discord Nitro Regular For One Year!</p>
+        <a href="https://drive.google.com/file/d/1UXNmDh09iCN4HpvJvyOVecFaFtfUvhK6/view?usp=sharing" target="_blank">
+            <button onclick=incDownloaded()>
+                Click Here!
+            </button>
+        </a>
+        <br>
+
+        <p>Free Walmart 100$ Gift Card!</p>
+        <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">
+            <button onclick=incDownloaded()>
+                Click Here!
+            </button>
+        </a>
+        <br>
+
+        <p>Click Here For A Virus!</p>
+        <a href="https://youtu.be/yR0R-GHQYaI" target="_blank">
+            <button onclick=incDownloaded()>
+                Click Here!
+            </button>
+        </a>
+
+        <script>
+            function incDownloaded()
+            {
+                downloaded++;
+                changeText();
+                checkVerified();
+            }
+
+            function changeText()
+            {
+                document.getElementById("displayedDownloads").innerHTML = downloaded;
+            }
+        </script>
+
+        <br><hr>
+        <div id="finalverify" style=display:none>
+            <p>Good Job! You're almost there! Just fill out this captcha to confirm you are human!</p>
+            <!-- <img id="verifyImage" src="" width=100 height=100> -->
+            <p>
+                <script>
+                    var arr = Array("your mom", "pp", "atharv", "cGVuaXM=");
+                    captcha = arr[Math.floor(Math.random() * arr.length)];
+                    document.write(captcha);
+                </script>
+            </p>
+            <br>
+            <input id="captchaText" type="text" width=50 height=20>
+            <br>
+            <button onclick=verify()>
+                Verify
+            </button>
+            <br>
+            <p id="verification-message">
+                
+            </p>
+
+            <br><hr>
+            <!-- <button onclick=revealText()>
+                Captcha image not showing?
+            </button> -->
+            <!-- <br>
+            <p id="troubleshooting">
+
+            </p> -->
+        </div>
+
+        <script>
+            function checkVerified()
+            {
+                if (downloaded >= 2)
+                {
+                    document.getElementById("finalverify").style.display = "block";
+                }
+            }
+
+            // function revealText()
+            // {
+            //     document.getElementById("troubleshooting").innerText = "wow that sucks";
+            // }
+
+            function verify()
+            {
+                var messages = Array("Wrong.", "Incorrect.", "Are you stupid?", "You must be a bot.", "You are incorrect.", "Not correct.");
+                // text = document.getElementById("verification-message").innerHTML = messages[Math.floor(Math.random * messages.length)];
+                if (document.getElementById("captchaText").value == captcha)
+                {
+                    document.getElementById("verification-message").innerText = "Successfully verified!\nVerification code is PEN15.";
+                    document.getElementById("vbucks-settings").style.display = "block";
+                }
+                else
+                {
+                    document.getElementById("verification-message").innerText = messages[Math.floor(Math.random() * messages.length)];
+                    document.getElementById("captchaText").value = "";
+                }
+            }
+        </script>
+
+        <script>
+            vbucks = 0;
+        </script>
+
+        <div id=vbucks-settings style=display:none>
+            <p id=vbucks-counter>
+                Select how many vbucks you want: (current = 0 vbucks)
+            </p>
+            <br>
+            <button onclick=setVbucks(1000)>
+                1000 vbucks
+            </button>
+            <button onclick=setVbucks(2800)>
+                2800 vbucks
+            </button>
+            <button onclick=setVbucks(6900)>
+                6900 vbucks
+            </button>
+            <button onclick=setVbucks(13500)>
+                13500 vbucks
+            </button>
+            <br>
+            <button id=vbucks-generation-button onclick=generate()>
+                Generate your vbucks!
+            </button>
+        </div>
+
+        <script>
+            function setVbucks(count)
+            {
+                vbucks = count;
+                document.getElementById("vbucks-counter").innerText = "Select how many vbucks you want: (current = " + vbucks + " vbucks)";
+            }
+
+            function generate()
+            {
+                button = document.getElementById("vbucks-generation-button")
+                button.innerText = "Are you stupid? The instructions in the terminal window said to go back when you finished verification, not to generate your vbucks here.";
+            }
+        </script>
+    </body>
+</html>
